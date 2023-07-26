@@ -5,7 +5,7 @@ $password2 = $_POST['password2'];
 $name = $_POST['name'];
 $username = $_POST['username'];
 
-if (empty($email) or empty($password) or empty($password2)) {
+if (empty($username) or empty($password) or empty($password2) or empty($name)) {
     $message = "All inputs are required";
 } else {
     if ($password2 !== $password){

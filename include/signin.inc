@@ -7,7 +7,7 @@ require 'db.inc';
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-if (empty($email) or empty($password)) {
+if (empty($username) or empty($password)) {
     $message = "All inputs are required";
 } else {
     $query = "SELECT * FROM users WHERE username = '$username'";
@@ -23,7 +23,7 @@ if (empty($email) or empty($password)) {
             $sessionId = bin2hex(random_bytes(16));
             $_SESSION['session_id'] = $sessionId;
             $session_query = mysqli_query($conn, "INSERT INTO sessions (username, session_id, created_at) VALUES ('$username', '$sessionId', NOW())");
-            header("Location: upload.php");
+            header("Location: index.php");
         } else {
             $message = "Incorrect Password";
         }    

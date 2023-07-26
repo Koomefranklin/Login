@@ -3,14 +3,14 @@
 require 'db.inc';
 if (isset($_SESSION['session_id'])) {
     $sessionId = $_SESSION['session_id'];
-    $getEmail = mysqli_query($conn, "SELECT email FROM sessions WHERE session_id = '$sessionId'");
-    if (mysqli_num_rows($getEmail) > 0){
-        $email = mysqli_fetch_assoc($getEmail)['email'];
-        $query = "SELECT * FROM users WHERE email = '$email'";
+    $getUsername = mysqli_query($conn, "SELECT username FROM sessions WHERE session_id = '$sessionId'");
+    if (mysqli_num_rows($getUsername) > 0){
+        $username = mysqli_fetch_assoc($getUsername)['username'];
+        $query = "SELECT * FROM users WHERE username = '$username'";
         $getUser = mysqli_query($conn, $query);
         if (mysqli_num_rows($getUser) > 0){
             $user = mysqli_fetch_assoc($getUser);
-            $email = $user['email'];
+            $username = $user['username'];
             $name = $user['name'];
         } else {
             header("Location: login.php");

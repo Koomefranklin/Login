@@ -1,0 +1,2 @@
+create table users (username VARCHAR(255) primary key not null , name VARCHAR(255) not null , password VARCHAR(255)not null , salt VARCHAR(255) not null );
+create table sessions(`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), session_id VARCHAR(255), created_at datetime NOT NULL, FOREIGN KEY (username) REFERENCES `users` (username));
