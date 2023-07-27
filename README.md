@@ -33,9 +33,7 @@ SELECT * FROM users;
 In phpMyAdmin, navigate to the database where you want to import the SQL file.
 Then, look for an option like "Import" or "Browse," which allows you to upload the SQL file from your local system
 
-After the import there is data added in the table for testing
-start the Apache and mysql/mariadb servers and open localhost on the browser
+Start the Apache and mysql/mariadb servers and open localhost on the browser
 ```bash
-USERNAME: user
-PASSWORD: Qwerty12#
+localhost/login
 ```
